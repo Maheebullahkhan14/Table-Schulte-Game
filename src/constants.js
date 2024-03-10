@@ -7,7 +7,7 @@ const Levels = [
     {
         id : 2,
         name : "Level 2",
-        value : 25
+        value : 20
     }
     ,{
         id : 3,
