@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
 .App {
-  text-align: center;
+  width: 97vw;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -28,11 +31,329 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-game-title h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
 }
+
+.active-wrapper {
+  opacity: 1 !important;
+  transform: translateY(0%) !important;
+  visibility: visible !important;
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 15px;
+  text-align: center;
+}
+
+.screen1-main-cover{
+  opacity: 0;
+    transform: translateY(150%);
+    visibility: hidden;
+    transition: opacity 0.5s cubic-bezier(0, 0, 0.2, 1),
+        transform 0.5s cubic-bezier(0, 0, 0.2, 1),
+        visibility 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+.screen2-wrapper{
+  opacity: 0;
+    transform: translateY(150%);
+    visibility: hidden;
+    transition: opacity 0.5s cubic-bezier(0, 0, 0.2, 1),
+        transform 0.5s cubic-bezier(0, 0, 0.2, 1),
+        visibility 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.game-main-wrapper-cover {
+  display: flex;
+  justify-content: center;
+}
+
+.game-start-content img {
+  width: 30%;
+}
+
+.deactive-wrapper {
+  padding-top: 15px;
+  opacity: 0;
+  transform: translateY(-150%);
+  visibility: hidden;
+  transition: opacity 0.5s cubic-bezier(0, 0, 0.2, 1),
+      transform 0.5s cubic-bezier(0, 0, 0.2, 1),
+      visibility 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cellbox-cover-wrapper h2 {
+  font-family: "DM Serif Display", serif;
+  font-style: normal;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+}
+.cellbox-cover-wrapper {
+  width: 83px;
+  height: 65px;
+  border: 1px solid #e0dcdc11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cellbox-cover-wrapper.add-bg {
+  background-color: rgb(17 16 16) !important;
+  color: white;
+}
+
+.cellbox-main-cover-wrapper {
+  width: 500px;
+  /* border: 1px solid; */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border: none;
+}
+
+/* custom Css ------------------- */
+.btn-custom {
+  padding: 0.5em 1em;
+  background: none;
+  border: 2px solid #fff;
+  font-size: 15px;
+  color: #131313;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-radius: 12px;
+  background-color: #ecd448;
+  font-weight: bolder;
+  box-shadow: 0 2px 0 2px #000;
+}
+ 
+ .btn-custom:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 120%;
+  background-color: #ff6700;
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+ }
+ 
+ .btn-custom:hover {
+  background-color: #4cc9f0;
+  color: #fff;
+  box-shadow: 0 2px 0 2px #0d3b66;
+ }
+ 
+ .btn-custom:hover::before {
+  transform: skewX(30deg) translate(150%, -50%);
+  transition-delay: 0.1s;
+ }
+ 
+ .btn-custom:active {
+  transform: scale(0.9);
+ }
+
+ /* Levels ----- */
+ .level-box-cover {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.level-box {
+  width: 36px;
+  cursor: pointer;
+  height: 36px;
+  border: 1px solid #6969691a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  background-color: #cee6fc;
+  font-size: 17px;
+  font-weight: 800;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.active-level-box.level-box {
+  background: #2e81c9;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.game-timer-cover-wrapper {
+  padding: 5px 15px;
+  border-radius: 15px;
+  background-color: aliceblue;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+
+.timer-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+
+.timer-box h3 {
+  margin-bottom: 2px;
+  color: darkslateblue;
+  font-weight: 800;
+}
+
+.timer-banner img {
+  width: 65%;
+  mix-blend-mode: darken;
+}
+
+/* MOdal Styles ------------------- */
+.modal {
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.game-cover-wrapper {
+  border-radius: 15px;
+  padding: 8px 10px;
+  padding-bottom: 0px;
+  margin-top: 30px;
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: ghostwhite;
+  justify-content: center;
+  text-align: center;
+  box-shadow: rgb(60 64 67 / 11%) 0px 1px 2px 0px, rgb(60 64 67 / 8%) 0px 2px 6px 2px;
+}
+
+.game-cover-wrapper p {
+  font-weight: 800;
+  font-size: 30px;
+  padding-bottom: 0px;
+  margin-bottom: 6px;
+}
+
+.game-cover-wrapper h5 {
+  font-family: "DM Serif Display", serif;
+  letter-spacing: 0.8px;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.timer-content-box h5 {
+  font-family: "DM Serif Display", serif;
+  letter-spacing: 0.7px;
+  margin-bottom: 0px;
+}
+
+
+/* Add this to your global styles or in the component's stylesheet */
+
+
+.game-over-main-cover-wrapper {
+  width: 0;
+ 
+  position: absolute;
+  
+  border-radius: 15px;
+  background-color: #f8f8be;
+  margin-top: 40px;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  padding: 0px;
+  top : 70px;
+  
+}
+
+.game-over-main-cover-wrapper.show-game-over {
+  width: 450px; 
+  padding: 15px;
+  border: 1px solid #69696924;
+  
+}
+
+.game-over-modal img {
+  width: 400px;
+  margin: -75px auto;
+  display: flex;
+}
+
+.game-over-content-box {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.game-over-content-box p {
+  font-size: 35px;
+  font-weight: 800;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.game-over-btns-wrapper button {
+  padding: 8px 20px;
+  border-radius: 11px;
+  border: none;
+  background: #0a61aa;
+  color: white;
+  font-weight: 700;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+/* Add any additional styling as needed */
