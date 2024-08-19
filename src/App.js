@@ -139,7 +139,7 @@ const App = () => {
     <div className="App">
       <div className="main-game-cover">
         <div className="row">
-          <div className="col-lg-3">
+          <div className={isActiveScreen2 ? "col-lg-3 d-lg-column d-flex justify-content-between" : "col-lg-3 d-lg-column"}>
             {!isGameOver && (
               <GameScore setScores={setScores} Scores={Scores}/>
             )}
@@ -148,7 +148,7 @@ const App = () => {
               <GameLives TotalGameLives={TotalGameLives}/>
             )}
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 order-lg-0 order-1">
             <div className="game-main-wrapper-cover">
               <div
                 className={
@@ -188,7 +188,6 @@ const App = () => {
                 }
               >
                 <div className="screen-content-box">
-                  <h5>Screen 2</h5>
                   <div className="cellbox-main-cover-wrapper">
                     {ScreenBox}
                   </div>
@@ -200,9 +199,9 @@ const App = () => {
             </div>
             
           </div>
-          <div className="col-lg-3 py-4">
+          <div className="col-lg-3 py-4 order-lg-1 order-0">
                 <div className="game-side-section">
-                      <GameInstruction />
+                      <GameInstruction className="d-lg-flex d-none" />
                       <GameTimer isActiveScreen2={isActiveScreen2} Timer={Timer}/>
                 </div>
           </div>
